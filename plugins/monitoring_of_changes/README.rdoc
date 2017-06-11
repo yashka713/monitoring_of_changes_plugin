@@ -1,3 +1,7 @@
 = monitoring_of_changes
 
-Description goes here
+Description goes here:
+
+Before starting, please, add `gem 'httparty', '0.14'` to your `Gemfile` and include `monitoring_of_changes` into your plugin folder
+
+`Redmine` version is `3.3.3`
