@@ -17,7 +17,7 @@ module AttachmentPatches
         delete_from_disk_without_ext
         ChangeMonitor.send_issue_update(container_id,
                                         User.current.id,
-                                        DateTime.now .strftime('%Y-%d-%m %H:%M:%S'))
+                                        DateTime.now.strftime('%Y-%d-%m %H:%M:%S'))
       end
     end
   end
