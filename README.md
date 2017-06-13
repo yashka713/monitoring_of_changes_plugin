@@ -1,5 +1,4 @@
 *Redmine* version is `3.3.3`
-[![Build Status](https://semaphoreci.com/api/v1/ydionis/ruby-hotel/branches/master/shields_badge.svg)](https://semaphoreci.com/ydionis/ruby-hotel)
 
 # monitoring_of_changes_plugin
 
