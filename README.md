@@ -26,7 +26,9 @@ Install
 -----------------
 ```
 git clone https://github.com/yashka713/monitoring_of_changes_plugin
+```
 move `monitoring_of_changes_plugin` into `plugins` folder main directory
+```
 bundle install
 ```
 
