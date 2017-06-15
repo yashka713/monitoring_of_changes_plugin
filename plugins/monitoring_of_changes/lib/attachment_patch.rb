@@ -4,9 +4,7 @@ module AttachmentPatches
       unloadable
       base.extend(ClassMethods)
       base.send(:include, InstanceMethods)
-      base.class_eval do
-        alias_method_chain :delete_from_disk, :ext
-      end
+      base.class_eval {alias_method_chain :delete_from_disk, :ext}
     end
 
     module ClassMethods
@@ -15,9 +13,10 @@ module AttachmentPatches
     module InstanceMethods
       def delete_from_disk_with_ext
         delete_from_disk_without_ext
-        ChangeMonitor.send_issue_update(container_id,
-                                        User.current.id,
-                                        DateTime.now.strftime('%Y-%d-%m %H:%M:%S'))
+        ChangeMonitor.send_issue_update(
+            container_id,
+            User.current.id
+        )
       end
     end
   end

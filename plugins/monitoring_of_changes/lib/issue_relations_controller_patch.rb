@@ -17,15 +17,15 @@ module IssueRelationsPatches
       def create_with_ext
         create_without_ext
         ChangeMonitor.send_issue_update(@issue.id,
-                                        User.current.id,
-                                        DateTime.now .strftime('%Y-%d-%m %H:%M:%S'))
+                                        User.current.id
+        )
       end
 
       def destroy_with_ext
         destroy_without_ext
         ChangeMonitor.send_issue_update(@relation.issue_from_id,
-                                        User.current.id,
-                                        DateTime.now .strftime('%Y-%d-%m %H:%M:%S'))
+                                        User.current.id
+        )
       end
     end
   end

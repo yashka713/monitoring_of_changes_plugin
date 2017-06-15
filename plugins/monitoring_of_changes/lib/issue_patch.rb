@@ -3,9 +3,7 @@ module IssuePatches
     def self.included(base)
       base.extend(ClassMethods)
       base.send(:include, InstanceMethods)
-      base.class_eval do
-        after_update :monitoring_issue, on: %i[create update]
-      end
+      base.class_eval {after_update :monitoring_issue, on: %i[create update]}
     end
 
     module ClassMethods
@@ -14,8 +12,8 @@ module IssuePatches
     module InstanceMethods
       def monitoring_issue
         ChangeMonitor.send_issue_update(Issue.find(self).id,
-                                        User.current.id,
-                                        DateTime.now .strftime('%Y-%d-%m %H:%M:%S'))
+                                        User.current.id
+        )
       end
     end
   end
